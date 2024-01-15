@@ -11,6 +11,16 @@ function createWindow(): void {
     show: false,
     autoHideMenuBar: true,
     ...(process.platform === 'linux' ? { icon } : {}),
+    center: true,
+    title: 'NandemoNote',
+    frame: false,
+    transparent: true,
+    backgroundColor: '#ff202020',
+    titleBarOverlay: {
+      color: '#202020',
+      symbolColor: '#74b1be'
+    },
+    titleBarStyle: 'hidden',
     webPreferences: {
       preload: join(__dirname, '../preload/index.js'),
       sandbox: true,
